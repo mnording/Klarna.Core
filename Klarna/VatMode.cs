@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Klarna
 {
-    public class Class1
+    public enum VatMode
     {
+        IncVat = 1, ExVat=2
     }
 }

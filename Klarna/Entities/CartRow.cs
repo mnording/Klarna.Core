@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Klarna.Entities
@@ -25,7 +27,7 @@ namespace Klarna.Entities
         /// <param name="vatPercentage">How many percentages VAT should be set</param>
         public CartRow(string artno,string name, int quantity, int price,VatMode vatMode,int vatPercentage)
         {
-            if (price < 100)
+            if (Math.Abs(price) < 100)
             {
                 throw new ArgumentException("Price has to be atleast 100 cents");
             }

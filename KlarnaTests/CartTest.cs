@@ -15,6 +15,12 @@ namespace KlarnaTests
             cart.addProduct(new CartRow("test", "testname", 22, -200, 25));
         }
         [TestMethod]
+        public void CanAddDiscout()
+        {
+            var cart = new Cart();
+            cart.addDiscount(new CartRow("test", "testname", 22, -200, 25));
+        }
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void CannotAddPositiveDiscount()
         {

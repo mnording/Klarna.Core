@@ -11,7 +11,7 @@ namespace KlarnaTests
         [TestMethod]
         public void CanInitRow()
         {
-            var t = new CartRow("article number", "titlel", 0, 1000, VatMode.IncVat, 25);
+            var t = new CartRow("article number", "titlel", 1, 1000, VatMode.IncVat, 25);
             Assert.IsNotNull(t);
         }
         [TestMethod]
@@ -23,7 +23,7 @@ namespace KlarnaTests
         [TestMethod]
         public void CalculatesTaxCorrectly()
         {
-            var t = new CartRow("article number", "titlel", 0, 1000, VatMode.IncVat, 25);
+            var t = new CartRow("article number", "titlel", 1, 1000, VatMode.IncVat, 25);
             Assert.AreEqual(t.tax_rate,2500);
         }
         [TestMethod]

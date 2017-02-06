@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>Mnording.Klarna.Core</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Mnording</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Core klarna dependencies used in other libraries.</description>
-    <releaseNotes>Dowgrading .net support</releaseNotes>
+    <releaseNotes>Bigfiix for discount</releaseNotes>
     <copyright>Copyright Klarna 2017</copyright>
   </metadata>
 </package>

@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -52,16 +56,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AttachementTest.cs" />
     <Compile Include="DigestCreatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CartTest.cs" />
     <Compile Include="CartRowTest.cs" />
+    <Compile Include="OrderLineTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Klarna\Klarna.csproj">
       <Project>{2b59e8a3-0f95-4ad1-a296-6d1de0e3e665}</Project>
       <Name>Klarna</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

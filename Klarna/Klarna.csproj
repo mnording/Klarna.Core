@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,15 +45,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Attachement\AttacementBody.cs" />
+    <Compile Include="Entities\Attachement\BaseReservationDetails.cs" />
+    <Compile Include="Entities\Attachement\CarRentalItinerary.cs" />
+    <Compile Include="Entities\Attachement\CarRentalReservationDetails.cs" />
+    <Compile Include="Entities\Attachement\CustomerAccountInfo.cs" />
+    <Compile Include="Entities\Attachement\HotelItinerary.cs" />
+    <Compile Include="Entities\Attachement\HotelReservationDetails.cs" />
+    <Compile Include="Entities\Attachement\Insurance.cs" />
+    <Compile Include="Entities\Attachement\Itinerary.cs" />
+    <Compile Include="Entities\Attachement\Location.cs" />
+    <Compile Include="Entities\Attachement\Person.cs" />
+    <Compile Include="Entities\Attachement\TransportReservationDetails.cs" />
+    <Compile Include="Entities\Attachement\Voucher.cs" />
+    <Compile Include="Entities\Attachment.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartRow.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Currency.cs" />
     <Compile Include="Entities\MerchantConfig.cs" />
+    <Compile Include="Entities\Options.cs" />
     <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderLine.cs" />
+    <Compile Include="Entities\MerchantUrls.cs" />
+    <Compile Include="Exception\ConnectionException.cs" />
+    <Compile Include="Exception\MerchantConfigException.cs" />
     <Compile Include="Helpers\DigestCreator.cs" />
+    <Compile Include="Helpers\JsonRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VatMode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

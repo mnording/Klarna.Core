@@ -1,0 +1,1 @@
+.\nuget.exe pack klarna.csproj -properties Configuration=release

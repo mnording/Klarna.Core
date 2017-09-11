@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Klarna.Entities
 {
+    [Obsolete("Use list of OrderLines instead")]
     public class Cart
     {
         List<CartRow> items;

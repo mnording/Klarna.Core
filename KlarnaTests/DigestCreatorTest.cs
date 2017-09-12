@@ -11,7 +11,7 @@ namespace KlarnaTests
         public void WillCreateCorrectOfflineDigest()
         {
             var t = new DigestCreator();
-            var digest = t.CreateOffline("test","2323");
+            var digest = t.CreateDigest("test","2323");
             Assert.AreEqual(digest, "dGVzdDoyMzIz");
         }
     }

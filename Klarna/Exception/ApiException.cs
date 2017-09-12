@@ -8,6 +8,9 @@ namespace Klarna.Exception
     [JsonObject(MemberSerialization.OptIn)]
     public class ApiException:WebException
     {
+        /// <summary>
+        /// Correlation id of the request, can be used while tracing the request
+        /// </summary>
         [JsonProperty(PropertyName = "correlation_id")]
         public string correlation_id;
         [JsonProperty(PropertyName = "error_code")]

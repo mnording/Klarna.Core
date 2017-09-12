@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net;
 using Klarna.Exception;
+using Newtonsoft.Json;
 
 namespace Klarna.Helpers
 {
@@ -26,9 +27,11 @@ namespace Klarna.Helpers
                 HttpWebResponse response = (HttpWebResponse) request.GetResponse();
                 return response;
             }
-            catch (System.Exception e)
+            catch (WebException ex)
             {
-                throw new ConnectionException(e.Message);
+                var resp = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+                ApiException obj = JsonConvert.DeserializeObject<ApiException>(resp);
+                throw obj;
             }
             
         }

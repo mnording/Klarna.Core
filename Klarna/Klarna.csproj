@@ -69,6 +69,7 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderLine.cs" />
     <Compile Include="Entities\MerchantUrls.cs" />
+    <Compile Include="Exception\ApiException.cs" />
     <Compile Include="Exception\ConnectionException.cs" />
     <Compile Include="Exception\MerchantConfigException.cs" />
     <Compile Include="Helpers\DigestCreator.cs" />

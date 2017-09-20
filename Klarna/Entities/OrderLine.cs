@@ -26,11 +26,11 @@ namespace Klarna.Entities
         [JsonProperty(PropertyName = "tax_rate")]
         public int TaxRate { get; set; }
         [JsonProperty(PropertyName = "total_amount")]
-        public int TotalAmount { get; set; }
+        public int? TotalAmount { get; set; }
         [JsonProperty(PropertyName = "total_discount_amount")]
-        public int TotalDiscountAmount { get; set; }
+        public int? TotalDiscountAmount { get; set; }
         [JsonProperty(PropertyName = "total_tax_amount")]
-        public int TotalTaxAmount { get; set; }
+        public int? TotalTaxAmount { get; set; }
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
         [JsonProperty(PropertyName = "unit_price")]
@@ -56,6 +56,11 @@ namespace Klarna.Entities
             TotalAmount = UnitPrice*Quantity;
             TaxRate = tax_rate;
             TotalTaxAmount = CalculateTaxAmountFromGross();
+        }
+
+        public OrderLine(string name,string reference, int quantity, int unit_price, int tax_rate):this(name,quantity,unit_price,tax_rate)
+        {
+            Reference = reference;
         }
 
         private int CalculateTaxAmountFromGross()

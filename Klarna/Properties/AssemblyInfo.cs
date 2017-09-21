@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mnording.Klarna")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Klarna")]
+[assembly: AssemblyCompany("Mnording,Klarna")]
 [assembly: AssemblyProduct("Klarna")]
 [assembly: AssemblyCopyright("Copyright © Klarna 2016")]
 [assembly: AssemblyTrademark("")]

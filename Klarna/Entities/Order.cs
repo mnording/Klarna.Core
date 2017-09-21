@@ -9,8 +9,6 @@ namespace Klarna.Entities
 {
     public class Order
     {
-        [JsonProperty(PropertyName = "order_lines")]
-        protected List<OrderLine> cart;
         MerchantConfig _config;
         [JsonProperty(PropertyName = "shipping_address")]
         public  Address ShippingAddress;
@@ -19,12 +17,12 @@ namespace Klarna.Entities
         [JsonProperty(PropertyName = "merchant_urls")]
         public MerchantUrls Merchanturls;
 
-        public Order(List<OrderLine> cart,MerchantUrls urls)
+        public Order(MerchantUrls urls)
         {
-            this.cart = cart;
+            
             Merchanturls = urls;
         }
-        public Order(List<OrderLine> cart, MerchantUrls urls, Address shippAddress,  Address billAddress = null):this(cart,urls)
+        public Order(MerchantUrls urls, Address shippAddress,  Address billAddress = null):this(urls)
         {
             ShippingAddress = shippAddress;
             BillingAddress = billAddress;

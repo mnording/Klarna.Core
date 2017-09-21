@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -9,6 +10,9 @@ namespace Klarna.Entities
 {
     public class OrderLine
     {
+        private int? _totaltaxamount;
+        private int? _totalamount;
+        private int? _totaldiscountamount;
         [JsonProperty(PropertyName = "image_url")]
         public Uri ImageUrl { get; set; }
         [JsonProperty(PropertyName = "merchant_data")]
@@ -26,11 +30,55 @@ namespace Klarna.Entities
         [JsonProperty(PropertyName = "tax_rate")]
         public int TaxRate { get; set; }
         [JsonProperty(PropertyName = "total_amount")]
-        public int? TotalAmount { get; set; }
+        public int? TotalAmount {
+            get { return _totalamount; }
+            set
+            {
+                if (value != null)
+                {
+                    _totalamount = (int)value;
+                    return;
+                }
+                else
+                {
+                    _totalamount = null;
+                    return;
+                }
+            }
+        }
         [JsonProperty(PropertyName = "total_discount_amount")]
-        public int? TotalDiscountAmount { get; set; }
+        public int? TotalDiscountAmount {
+            get { return _totaldiscountamount; }
+            set
+            {
+                if (value != null)
+                {
+                    _totaldiscountamount = (int)value;
+                    return;
+                }
+                else
+                {
+                    _totaldiscountamount = null;
+                    return;
+                }
+            }
+        }
         [JsonProperty(PropertyName = "total_tax_amount")]
-        public int? TotalTaxAmount { get; set; }
+        public int? TotalTaxAmount {
+            get { return _totaltaxamount; }
+            set
+            {
+                if (value != null)
+                {
+                    _totaltaxamount = (int) value;
+                    return;
+                }
+                else
+                {
+                    _totaltaxamount = null;
+                    return;
+                }
+            } }
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
         [JsonProperty(PropertyName = "unit_price")]

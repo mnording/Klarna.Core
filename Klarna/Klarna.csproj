@@ -64,6 +64,7 @@
     <Compile Include="Entities\CartRow.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Currency.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\MerchantConfig.cs" />
     <Compile Include="Entities\Options.cs" />
     <Compile Include="Entities\Order.cs" />

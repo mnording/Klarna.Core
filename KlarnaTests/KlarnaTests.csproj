@@ -62,6 +62,7 @@
     <Compile Include="CartTest.cs" />
     <Compile Include="CartRowTest.cs" />
     <Compile Include="OrderLineTest.cs" />
+    <Compile Include="CustomerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Klarna\Klarna.csproj">

@@ -16,6 +16,8 @@ namespace Klarna.Entities
         public Address BillingAddress;
         [JsonProperty(PropertyName = "merchant_urls")]
         public MerchantUrls Merchanturls;
+        [JsonProperty(PropertyName = "customer")]
+        public Customer Customer;
 
         public Order(MerchantUrls urls)
         {

@@ -57,7 +57,20 @@ namespace Klarna.Entities
         {
             Reference = reference;
         }
+        /// <summary>
+        /// Calculating the total amounts. Used by Checkout and Payments
+        /// </summary>
+        /// <param name="totalAmount">The amount to calculate from, in minor units</param>
+        /// <returns>The amount of VAT in minor units</returns>
+        protected int CalculateTaxAmountTotal(int totalAmount)
+        {
+            double taxratefordivide = TaxRate / 10000.00;
+            var priceexvat = totalAmount / (1 + (taxratefordivide));
+            var vatAmount = priceexvat - totalAmount;
+            vatAmount = vatAmount * -1;
+            vatAmount = Math.Round(vatAmount);
+            return (int)(vatAmount);
+        }
 
-        
     }
 }
